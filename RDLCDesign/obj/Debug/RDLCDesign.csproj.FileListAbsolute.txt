@@ -1,0 +1,9 @@
+C:\Users\HP\source\repos\registrationform\RDLCDesign\bin\Debug\RDLCDesign.exe.config
+C:\Users\HP\source\repos\registrationform\RDLCDesign\bin\Debug\RDLCDesign.exe
+C:\Users\HP\source\repos\registrationform\RDLCDesign\bin\Debug\RDLCDesign.pdb
+C:\Users\HP\source\repos\registrationform\RDLCDesign\obj\Debug\RDLCDesign.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\registrationform\RDLCDesign\obj\Debug\RDLCDesign.Properties.Resources.resources
+C:\Users\HP\source\repos\registrationform\RDLCDesign\obj\Debug\RDLCDesign.csproj.GenerateResource.cache
+C:\Users\HP\source\repos\registrationform\RDLCDesign\obj\Debug\RDLCDesign.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\registrationform\RDLCDesign\obj\Debug\RDLCDesign.exe
+C:\Users\HP\source\repos\registrationform\RDLCDesign\obj\Debug\RDLCDesign.pdb

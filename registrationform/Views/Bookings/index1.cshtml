@@ -1,0 +1,18 @@
+﻿@model registrationform.Models.Booking
+
+@{
+    ViewData["Title"] = "Booking Confirmation";
+}
+
+<h1>Booking Confirmation</h1>
+
+<p>Thank you for booking with us! Here are the details of your booking:</p>
+
+<ul>
+    <li><strong>Email:</strong> @Model.Email</li>
+    <li><strong>Service Booked:</strong> @Model.service</li>
+</ul>
+
+<p>If you have any questions or need to make changes to your booking, please contact us.</p>
+
+<a asp-action="Create">Book Another Service</a> | <a asp-action="Index">Back to Home</a>

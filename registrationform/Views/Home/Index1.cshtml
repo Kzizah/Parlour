@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Hobbits</title>
+
+    <link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar__container">
+                <a href="#home" id="navbar__logo">ADMIN</a>
+                <!-- This is our hamburger menu -->
+                <div class="navbar__toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+               
+                   
+                    <li class="navbar__item">
+                        @* <a href="Customers" class="navbar__links" id="customer-page">Customer</a> *@
+                        <a asp-controller="Customers" asp-action="Index" class="navbar__links" id="customer-page">Customer</a>
+                    </li>
+                <li class="navbar__item">
+                    <a asp-controller="bookings" asp-action="index" class="navbar__links" id="customer-page">Booking</a>
+                </li>
+                    <li class="navbar__item">
+                        <a asp-controller="services" asp-action="index" class="navbar__links" id="customer-page">Service</a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- The Hero Section -->
+    <div class="hero" id="home">
+        <div class="hero__container">
+            <h1 class="hero__heading">Welcome to <br><span>Hobbits Beauty Parlour</span></h1>
+            <p class="hero__description">Unlimited Possibilities. <br><span> You've got your own style and your own attitude, so you should have a professional space that is totally you.</span></p>
+
+        </div>
+    </div>
+
+    <!-- The About Section -->
+    <div class="main" id="about">
+        <div class="main__container">
+            <div class="main__img--container">
+                <!-- An image <i class="fas fa-layer-group"></i>-->
+                <div class="main__img--card">
+                    <img src="media/icons8-team-ZGzHKEpem88-unsplash.jpg" alt="Pic">
+                    <h2 id="sensational">Sensational Experience</h2>
+                </div>
+            </div>
+            <!-- The Content -->
+            <div class="main__content">
+                <h1>What do we do?</h1>
+                <h2>We are here to help you achieve your desired look. We want our clients waking up every morning feeling flawless.</h2>
+                <p>Hobbits Beauty parlour is a top-notch nail salon,hair salon, facials and spa in Nairobi, Kenyatta Avenue.<br> Our nail and spa salon is the most affordable and professional. We focus on customer safety, needs, and satisfaction.</p>
+                <p>We want you to experience our chic, welcoming, and comfortable med spa offering a variety of services. So much more than eyelash services, we provide beautiful experiences delivered under the care of our physicians, nurses, and estheticians.</p>
+                <!-- <button class="main__btn"><a href="#">Schedule Call</a></button> -->
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <div class="services" id="services">
+        <div id="service-page">
+            <h1>Our Services</h1>
+            <p>
+                Our services are affordable, <br>
+                Sensational and of high quality
+            </p>
+            <div id="service-list">
+                <h2>Services</h2>
+                <ul></ul>
+            </div>
+        </div>
+
+
+        <div id="service__details">
+            <h2 id="service-name">Service Details</h2>
+            <p>
+                To get to know more about our service, <br>
+                kindy click on the service and you will learn <br> the available slots that are availabe for <br> Kindly book Now, the earlier the better!
+            </p>
+            <img id="service-image" src="" alt="">
+            <p id="service-description"></p>
+            <p id="available-session-slots"></p>
+            <p id="service-price"></p>
+            <!-- <button id="book-now" type="button">Book Now</button> -->
+
+        </div>
+
+        <div id="add-service">
+            <h2 id="adding-service">Add a service</h2>
+            <p>Administrator rights only.</p>
+            <form>
+                <div>
+                    <label for="service">Service:</label>
+                    <input type="text" id="service" name="service" required>
+                </div>
+                <div>
+                    <label for="service-url">Service URL:</label>
+                    <input type="text" id="image-url" name="service-url" required>
+                </div>
+                <div>
+                    <label for="sesion_slots">Session slots:</label>
+                    <input type="number" id="session-slots" name="session-slots" required>
+                </div>
+                <div>
+                    <label for="booked-slots">Booked slots:</label>
+                    <input type="number" id="booked-slots" name="booked-slots" required>
+                </div>
+                <div>
+                    <label for="session-price">Price:</label>
+                    <input type="text" id="session-price" name="session-price" required>
+                </div>
+                <button type="submit">Add Service</button>
+                <!-- <button class="main__btn"><a href="#">Add Service</a></button> -->
+            </form>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

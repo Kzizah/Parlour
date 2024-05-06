@@ -1,0 +1,81 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model registrationform.Models.Booking
+@inject UserManager<ApplicationUser> UserManager
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Booking</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form id="bookingForm" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" value="@UserManager.GetUserAsync(User).Result.Email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="service" class="control-label"></label>
+                <h>Book one service at a time</h><br>
+                <select name="service" multiple>
+                    <!-- Options for services -->
+                    <option value="Manicure and Pedicure">Manicure and Pedicure</option>
+                    <option value="Makeup Application">Makeup Application</option>
+                    <option value="Body Scrubs and Wraps">Body Scrubs and Wraps</option>
+                    <option value="Haircut and Styling">Haircut and Styling</option>
+                    <option value="Facials">Facials</option>
+                    <option value="Massage Therapy">Massage Therapy</option>
+
+
+
+
+                    <option value="Hair Coloring">Hair Coloring</option>
+                    <option value="Waxing">Waxing</option>
+                    <option value="Eyebrow Shaping and Tinting">Eyebrow Shaping and Tinting</option>
+
+                    <option value="Eyelash Extensions">Eyelash Extensions</option>
+                    <option value="Hair Treatments">Hair Treatments</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    <script>
+        // Function to display pop-up message with email and service booked
+        function displayBookingInfo(email, service) {
+            alert('Your booking has been successfully created!\n\nEmail: ' + email + '\nService: ' + service);
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var bookingForm = document.getElementById('bookingForm');
+            bookingForm.addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent form submission
+
+                // Get email and service values
+                var email = document.getElementById('Email').value;
+                var service = document.querySelector('select[name="service"]').value;
+
+                // Call the function to display the pop-up message
+                displayBookingInfo(email, service);
+
+                // Optionally, you can submit the form via AJAX if needed
+                // Example: Use fetch API to submit form data asynchronously
+            });
+        });
+    </script>
+}

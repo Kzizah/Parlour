@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Hobbits</title>
+    
+    <link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar__container">
+                <a href="#home" id="navbar__logo">HOBBITS</a>
+                <!-- This is our hamburger menu -->
+                <div class="navbar__toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar__menu">
+
+                    <li class="navbar__item">
+                        <a asp-controller="home" asp-action="index"  class="navbar__links" id="#home">Home</a>
+                    </li>
+                   
+                    <li class="navbar__item">
+                        <a href="#about" class="navbar__links" id="about-page">About Us</a>
+                    </li>
+                   
+                    <li class="navbar__item">
+                        <a asp-controller="services" asp-action="index" class="navbar__links" id="customer-page">Service</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a class="navbar__links" id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a asp-controller="bookings" asp-action="index" class="navbar__links" id="customer-page">Booking</a>
+                    </li>
+                    
+                @if (User.IsInRole("admin"))
+                {
+             
+                    <li class="navbar__item">
+                        @* <a href="Customers" class="navbar__links" id="customer-page">Customer</a> *@
+                        <a asp-controller="Customers" asp-action="Index" class="navbar__links" id="customer-page">Customer</a>
+                    </li>
+                   
+                }
+                  
+                    <partial name="_LoginPartial" />
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+<!-- Footer Section -->
+<div class="footer__container">
+    <div class="footer__links">
+        <div class="footer__link--wrapper">
+            <div class="footer__link--items">
+                <h2>About Us</h2>
+                <a href="/sign__up">How it works</a> <a href="/">Testimonials</a>
+                <a href="/">Careers</a> <a href="/">Terms of Service</a>
+            </div>
+            <div class="footer__link--items">
+                <h2>Contact Us</h2>
+                <a href="/">Contact: +25456427433</a>
+                <a href="/">Support: HOBBITS@helpdesk.com</a>
+                <a href="/">Address: 1174-101000 P.O BOX Laister</a>
+            </div>
+        </div>
+        <div class="footer__link--wrapper">
+            <div class="footer__link--items">
+                <h2>Videos</h2>
+                <a href="/">Submit Video</a>
+                <a href="/">Ambassadors</a>
+                <a href="/">Agency</a>
+            </div>
+            <div class="footer__link--items">
+            </div>
+        </div>
+    </div>
+    <section class="social__media">
+        <div class="social__media--wrap">
+            <div class="footer__logo">
+                <a href="/" id="footer__logo">HOBBITS</a>
+            </div>
+            <p class="website__rights">© HOBBITS 2024. All rights reserved</p>
+            <div class="social__icons">
+                <a href="/" class="social__icon--link" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="/" class="social__icon--link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="/" class="social__icon--link">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="/" class="social__icon--link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="/" class="social__icon--link">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+</div>
+
+</html>
